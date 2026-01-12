@@ -214,6 +214,10 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
+      - name: Format license headers
+        run: mvn license:format -N
+        continue-on-error: true
+      
       - name:  Restore cached artifacts
         uses: actions/cache@v4
         with:
@@ -407,6 +411,10 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
+      - name: Format license headers
+        run: mvn license:format -N
+        continue-on-error: true
+      
       - name:  Restore cached artifacts
         uses: actions/cache@v4
         with:
