@@ -2,7 +2,8 @@ name: Build ThingsBoard MSA Services
 
 on: 
   push:
-    branches:  [ release-4.2 ]
+    branches:
+      - release-4.2 
     paths:
       - 'application/**'
       - 'common/**'
@@ -12,9 +13,10 @@ on:
       - 'transport/**'
       - 'ui-ngx/**'
       - 'pom.xml'
-      - '. github/workflows/build-msa-services.yml'
+      - '.github/workflows/separate-build.yml'
   pull_request:
-    branches: [ release-4.2 ]
+    branches: 
+     - release-4.2
   workflow_dispatch:
     inputs: 
       push_images:
@@ -100,7 +102,7 @@ jobs:
         working-directory: ui-ngx
         run: |
           export NODE_OPTIONS="--max-old-space-size=8192"
-          yarn build: prod
+          yarn build:prod
 
       - name: Upload frontend artifact
         uses: actions/upload-artifact@v4
