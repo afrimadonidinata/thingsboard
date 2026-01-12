@@ -406,7 +406,6 @@ jobs:
       - build-tb-node
       - build-js-executor
       - build-web-ui
-      - build-vc-executor
     if: always()
     steps:
       - name: Check build status
