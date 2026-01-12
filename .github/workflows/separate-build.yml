@@ -30,7 +30,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_PREFIX: ${{ github.repository_owner }}/thingsboard
+  IMAGE_PREFIX: ${{ github.repository_owner }}/iot
 
 jobs:
   # Job 1: Build common modules and application
